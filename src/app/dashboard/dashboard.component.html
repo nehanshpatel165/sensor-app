@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h1>Home Automation Dashboard</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 300px;">
+        <mat-nav-list>
+            <mat-list-item routerLink="home"> Home</mat-list-item>
+            <mat-list-item (click)="toggleDeviceMenu()" [class.text-bg-light]="showDeviceMenu"> 
+                <div class="d-flex justify-content-between">
+                    Device
+                <img style="cursor:pointer" [src]="deviceMenuIcon">
+                </div>
+            </mat-list-item>
+            <mat-list-item *ngIf="showDeviceMenu" class="text-bg-light" routerLink="device-create">Create Device</mat-list-item>
+            <mat-list-item *ngIf="showDeviceMenu" class="text-bg-light" routerLink="device-list">Device List</mat-list-item>
+            <mat-list-item (click)="toggleLocationMenu()" [class.text-bg-light]="showLocationMenu">
+                <div class="d-flex justify-content-between">
+                    Location
+                <img style="cursor:pointer" [src]="locationMenuIcon">
+                </div>
+            </mat-list-item>
+            <mat-list-item *ngIf="showLocationMenu" class="text-bg-light" routerLink="location-create">Create Location</mat-list-item>
+            <mat-list-item *ngIf="showLocationMenu"class="text-bg-light" routerLink="location-view">View Location</mat-list-item>
+            <mat-list-item>Logout</mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 100vh">
+        <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<!-- <div class="d-flex justify-content-end">
+ <button class="btn btn-primary" routerLink="location-create">CREATE LOCATION</button>
+ <button class="btn btn-primary" routerLink="location-view">VIEW LOCATION</button>
+ <button class="btn btn-primary" routerLink="device-create">CREATE DEVICE</button>
+<button class="btn btn-primary" routerLink="device-list">VIEW DEVICE</button>
+</div>  -->
+<!-- <router-outlet></router-outlet> -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">

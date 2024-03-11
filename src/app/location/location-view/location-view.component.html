@@ -1,0 +1,37 @@
+<!-- <div *ngFor="let location of location_info_array">
+ <h3>{{ location.location_name }}</h3>
+ <img style="width: 150px; height: 150px" [src]="location.img_name" alt={{location.img_name}}>
+ <p>Level: {{ location.level }}</p>
+</div> -->
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title class="m-2">Locations</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="m-2">
+        Manage locations in your account
+      </p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="container">
+        <div class="row m-4">
+            <table >
+                <tr class="text-center text-primary fs-6">
+                    <th>Image</th>
+                    <th>Location name</th>
+                    <th>Level</th>
+                    <th>Actions</th>
+                </tr>
+                <tr class="text-center" *ngFor="let location of location_info_array">
+                <td><img style="width: 150px; height: 150px" [src]="location.img_name" alt={{location.img_name}}></td>
+                <td><h3 >{{ location.location_name }}</h3></td>
+                <td><p>Level: {{ location.level }}</p></td>
+                <td><img class="p-2" style="cursor:pointer" src="assets/edit.svg" alt="edit" routerLink="locations/edit/{{location.id}}">
+                  <img class="p-2" style="cursor:pointer" src="assets/delete.svg" alt="delete" (click)="deleteLocation(location.id)"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+  </mat-card>
+  
+  

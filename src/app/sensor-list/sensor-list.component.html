@@ -1,0 +1,40 @@
+<!-- src/app/sensor-list/sensor-list.component.html
+<div *ngFor="let sensor of sensors">
+    <h3>Location: {{ sensor.location }}</h3>
+    <p>Temperature: {{ sensor.temperature }}</p>
+    <p>Humidity: {{ sensor.humidity }}</p>
+  </div>
+   -->
+<!-- src/app/sensor-list/sensor-list.component.html -->
+<!-- <div fxLayout="row" fxLayoutGap="20px">
+    <div fxFlex="50" *ngFor="let sensor of sensors">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Location: {{ sensor.location }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Temperature: {{ sensor.temperature }}</p>
+          <p>Humidity: {{ sensor.humidity }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+   -->
+
+   <!-- src/app/sensor-list/sensor-list.component.html -->
+<mat-grid-list cols="2" rowHeight="300px" class="example-card">
+    <mat-grid-tile *ngFor="let sensor of sensors">
+      <mat-card>
+        <mat-card-header>
+            Hello
+          <!-- <mat-card-title>Location: {{ sensor.location }}</mat-card-title> -->
+        </mat-card-header>
+        <mat-card-content>
+            <!-- <img mat-card-md-image src={{sensor.imageUrl}} alt="Photo of a Shiba Inu"> -->
+          <p>Temperature: {{ sensor.temp }}</p>
+          <p>Humidity: {{ sensor.humidity }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  

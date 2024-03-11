@@ -1,0 +1,21 @@
+<mat-grid-list cols="2" rowHeight="500px" class="example-card">
+    <mat-grid-tile *ngFor="let sensor of sensors">
+      <mat-card class="temp">
+        <mat-card-content>
+            <p-knob [(ngModel)]="tempValue" [readonly]="true" [size]="200" [max]="100"></p-knob>
+        </mat-card-content>
+        <mat-card-footer class="centered-footer">
+            Temperature
+        </mat-card-footer>
+      </mat-card>
+      <mat-card class="temp">
+        <mat-card-content>
+            <p-knob [(ngModel)]="humValue" valueColor="SlateGray" [readonly]="true" [size]="200" [max]="100"></p-knob>
+        </mat-card-content>
+        <mat-card-footer class="centered-footer">
+            Humidity
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+

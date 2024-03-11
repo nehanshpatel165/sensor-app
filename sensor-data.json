@@ -1,0 +1,7 @@
+{
+    "sensors": [
+      { "id": 1, "location": "Living Room", "temperature": 25, "humidity": 50,"imageUrl":"https://unsplash.com/photos/c0JoR_-2x3E/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8N3x8bGl2aW5nJTIwcm9vbXxlbnwwfHx8fDE3MDg2MjY2OTd8MA&force=true&w=640"},
+      { "id": 2, "location": "Bedroom", "temperature": 22, "humidity": 55,"imageUrl":"https://unsplash.com/photos/R-w5Q-4Mqm0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8YmVkcm9vbXxlbnwwfHx8fDE3MDg2NzUzOTV8MA&force=true&w=640" }
+    ]
+  }
+  

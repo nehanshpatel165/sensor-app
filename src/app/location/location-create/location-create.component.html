@@ -1,0 +1,84 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title class="m-2">Create Location</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="m-2">
+        Categorize the devices and distribute them into locations and floors.
+      </p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <form (ngSubmit)="onSubmit(locationForm)" #locationForm="ngForm">
+      <div class="container">
+        <div class="row">
+          <div class="form-group m-2 col">
+            <label for="locationName">Location name:</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                name="locationName"
+                ngModel
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group col m-2">
+            <label for="level">Level:</label>
+            <div class="input-group Name">
+              <select
+                type="text"
+                name="level"
+                class="form-control"
+                ngModel
+                required
+              >
+                <option
+                  value=""
+                  disabled="disabled"
+                  selected="selected"
+                >
+                  Select the level (floor)
+                </option>
+                <option value="0">Ground Floor </option>
+                <option value="1">Floor 1</option>
+                <option value="2">Floor 2</option>
+                <option value="3">Floor 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="form-group m-2 col">
+            <label for="imageGroup">Select an Image:</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group m-2 col">
+            <mat-radio-group [(ngModel)]="selectedImage" name="imageGroup" required>
+              <mat-radio-button
+                *ngFor="let image of images"
+                [value]="image.value"
+              >
+                <img
+                  class="m-2"
+                  [src]="image.src"
+                  alt="Image"
+                  style="width: 150px; height: 150px"
+                />
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group m-2 col">
+            <button type="submit" class="btn btn-primary" [disabled]="!locationForm.valid">Create Location</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+
+  
+  

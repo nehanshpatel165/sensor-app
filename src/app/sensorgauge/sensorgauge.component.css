@@ -1,0 +1,13 @@
+.example-card{
+    margin: 50px;
+}
+.centered-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.temp{
+    font-size: large;
+}
