@@ -61,6 +61,6 @@ onSubmit(form: NgForm): void {
   } else {
     console.error("Device ID is not provided");
   }
-  this.router.navigate(['device-list']);
+  this.router.navigate(['dashboard/device-list']);
 }
 }

@@ -8,22 +8,20 @@ import { DeviceCreateComponent } from './device/device-create/device-create.comp
 import { DeviceListComponent } from './device/device-list/device-list.component';
 import { DeviceEditComponent } from './device/device-edit/device-edit.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  // {path:'',component:DashboardComponent,pathMatch:'full'},
-  // {path:'location/create',component:LocationCreateComponent},
-  // {path:'location/view',component:LocationViewComponent},
-  // {path:'device/create',component:DeviceCreateComponent},
-  // {path:'device/list',component:DeviceListComponent},
-  // {path: 'location/edit/:id', component: LocationEditComponent },
-
+  {path:'',component:LoginComponent},
+  {path:'login',component:LoginComponent}, 
+  {path:'dashboard',component:DashboardComponent,
+  children:[
   {path:'home',component:HomeComponent},
-  {path:'location-create',component:LocationCreateComponent},
-  {path:'location-view',component:LocationViewComponent},
   {path:'device-create',component:DeviceCreateComponent},
   {path:'device-list',component:DeviceListComponent},
-  {path: 'location-view/locations/edit/:id', component: LocationEditComponent },
   {path: 'device-list/devices/edit/:id', component: DeviceEditComponent },
+  {path:'location-create',component:LocationCreateComponent},
+  {path:'location-view',component:LocationViewComponent},
+  {path: 'location-view/locations/edit/:id', component: LocationEditComponent },]}, 
 ];
 
 @NgModule({

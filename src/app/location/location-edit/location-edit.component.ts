@@ -58,7 +58,7 @@ onSubmit(form: NgForm): void {
   } else {
     console.error("Location ID is not provided");
   }
-  this.router.navigate(['location-view']);
+  this.router.navigate(['dashboard/location-view']);
 }
 
 }

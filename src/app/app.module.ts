@@ -32,6 +32,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
 import { DeviceEditComponent } from './device/device-edit/device-edit.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HomeComponent } from './home/home.component';
     DeviceCreateComponent,
     DeviceListComponent,
     DeviceEditComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

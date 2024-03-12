@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LocationService } from '../../location/location.service';
 import { DeviceService } from '../device.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-device-create',
@@ -17,7 +18,7 @@ export class DeviceCreateComponent {
   }
   locations :any[] =[]
 
-  constructor(private locationService:LocationService,private deviceService:DeviceService){}
+  constructor(private locationService:LocationService,private deviceService:DeviceService,private router:Router){}
  
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class DeviceCreateComponent {
       response => {console.log('Device created successfully',response)},
       error =>{console.log("Error while creating the device",error)}
     )
-
+    this.router.navigate(['dashboard/device-list'])
   }
 }
 

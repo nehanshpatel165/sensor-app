@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LocationService } from '../location.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location-create',
@@ -8,7 +9,7 @@ import { LocationService } from '../location.service';
   styleUrl: './location-create.component.css'
 })
 export class LocationCreateComponent {
-  constructor(private locationService:LocationService){}
+  constructor(private locationService:LocationService,private router:Router){}
 
   locationInfo={
     location_name:'',
@@ -28,6 +29,7 @@ export class LocationCreateComponent {
       },error =>{
         console.error("Error while creating the location", error)
       }) 
+    this.router.navigate(['dashboard/location-view'])
   }
 
   images = [
